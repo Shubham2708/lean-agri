@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+<div class="col-md-8">
+  <h1>All Post by <i>-title</i></h1>
+  <a style="cursor: pointer; color: blue;"><h4 [routerLink]="['/create-post']">create new post....</h4></a>
+  <br/>
+  <p>**All API Responses can also be seen in console by inspecting the browser...</p>
+  <br/>
+  <div class="list-group" *ngFor = "let post of allPost">
+    <a href="#" class="list-group-item list-group-item-action" (click)="redirectToDetails(post.id,post.userId)" [routerLink]="['/postdetail-comments']">{{post.title}}</a>
+</div>
+</div>
+</div>

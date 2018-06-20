@@ -1,0 +1,26 @@
+<div class="container">
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between"><div class="p-2">Post Details</div><div class="p-2">
+      <button type="button" class="btn btn-secondary btn-sm" [routerLink]="['/update-post']">edit</button></div>
+    </div>
+    </div>
+    <div class="card-body" *ngIf="post">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.body}}</p>
+      <a href="#" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">comments...</a>
+    </div>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div *ngFor = "let cm of comment; let i =index;">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>{{comment[i].body}}</p>
+                      <footer class="blockquote-footer">by {{comment[i].name}}<cite title="Source Title">&nbsp;&nbsp;({{comment[i].email}})</cite></footer>
+                    </blockquote>
+                  </div>    
+            </div>
+        </div>
+      </div>
+  </div>
+  </div>

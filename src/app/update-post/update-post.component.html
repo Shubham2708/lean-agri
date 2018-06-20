@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Edit the Post</h2>
+  <small>*all fields are mandatory</small>
+  <br/>
+  <br/>
+<form #postEditForm="ngForm">
+  <div class="form-group">
+    <label for="exampleInputTitle">Title</label>
+    <input type="text" class="form-control" id="exampleInputTitle" name = "newtitle" aria-describedby="titleHelp" [(ngModel)]="newtitle" placeholder="Enter new title" required>
+  </div>
+  <div class="form-group">
+      <label for="exampleInputBody">Body</label>
+      <input type="text" class="form-control" id="exampleInputBody" name="newbody" aria-describedby="bodyHelp" [(ngModel)]="newbody" placeholder="Enter new body" required>
+    </div>
+  <button type="submit" class="btn btn-primary" (click)="editedValue()" [disabled]="!postEditForm.form.valid">Submit</button>
+</form>
+<br/>
+<p *ngIf="flag==1">Post edited successfully....</p>
+<p>Once submitted ! API response can be seen in the console window by inspection.....</p>
+</div>
